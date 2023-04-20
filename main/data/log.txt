@@ -1,0 +1,10 @@
+D:\source\Python\CMM\venv\Scripts\python.exe D:/source/Python/CMM/utils/test.py 
+Downloading https://file.hankcs.com/hanlp/mtl/close_tok_pos_ner_srl_dep_sdp_con_electra_small_20210111_124159.zip to C:\Users\Master\AppData\Roaming\hanlp\mtl/close_tok_pos_ner_srl_dep_sdp_con_electra_small_20210111_124159.zip
+100% 114.3 MiB 568.4 KiB/s ETA:  0 s [=========================================]
+Decompressing C:\Users\Master\AppData\Roaming\hanlp\mtl/close_tok_pos_ner_srl_dep_sdp_con_electra_small_20210111_124159.zip to C:\Users\Master\AppData\Roaming\hanlp\mtl
+Downloading https://file.hankcs.com/hanlp/transformers/electra_zh_small_20210706_125427.zip to C:\Users\Master\AppData\Roaming\hanlp\transformers/electra_zh_small_20210706_125427.zip
+100%  41.2 KiB  41.2 KiB/s ETA:  0 s [=========================================]
+Decompressing C:\Users\Master\AppData\Roaming\hanlp\transformers/electra_zh_small_20210706_125427.zip to C:\Users\Master\AppData\Roaming\hanlp\transformers
+Downloading https://file.hankcs.com/corpus/char_table.json.zip to C:\Users\Master\AppData\Roaming\hanlp\thirdparty\file.hankcs.com\corpus/char_table.json.zip
+100%  19.4 KiB  19.4 KiB/s ETA:  0 s [=========================================]
+Decompressing C:\Users\Master\AppData\Roaming\hanlp\thirdparty\file.hankcs.com\corpus/char_table.json.zip to C:\Users\Master\AppData\Roaming\hanlp\thirdparty\file.hankcs.com\corpus

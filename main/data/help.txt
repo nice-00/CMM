@@ -1,0 +1,17 @@
+主语  subject
+谓语  predicate
+宾语  object
+名词  NOUN        NN pn
+代词  PRONOUN
+动词  VERB        vc vv
+形容词 ADJECTIVE
+数词  NUMERAL
+量词  QUANTIFIER
+区别词
+副词  ADVERB
+介词  PREPOSITION
+连词  CONJUNCTION
+冠词  ARTICLE
+助词  AUXILIARY WORD
+实词  NOTIONAL WORD
+虚词  empty word

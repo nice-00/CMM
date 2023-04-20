@@ -1,0 +1,35 @@
+导入实体
+
+LOAD CSV WITH HEADERS  FROM "file:///entity_2.csv" AS line
+MERGE (z:med{name:line.名称,category:line.分类})
+
+LOAD CSV WITH HEADERS  FROM "file:///entity_3.csv" AS line
+MERGE (z:add{add:line.补充})
+
+LOAD CSV WITH HEADERS  FROM "file:///entity_4.csv" AS line
+MERGE (z:symptom{symptom:line.症状})
+
+LOAD CSV WITH HEADERS  FROM "file:///entity_5.csv" AS line
+MERGE (z:step{step:line.步骤})
+
+
+
+LOAD CSV WITH HEADERS FROM "file:///relation.csv" AS line
+MATCH (from:med{name:line.from}),(to:med{name:line.to})
+merge (from)-[r:别名{relation:line.relation}]->(to)
+
+LOAD CSV WITH HEADERS FROM "file:///relation.csv" AS line
+MATCH (from:med{name:line.from}),(to:add{add:line.to})
+merge (from)-[r:性状{relation:line.relation}]->(to)
+
+LOAD CSV WITH HEADERS FROM "file:///relation.csv" AS line
+MATCH (from:med{name:line.from}),(to:symptom{symptom:line.to})
+merge (from)-[r:主治{relation:line.relation}]->(to)
+
+LOAD CSV WITH HEADERS FROM "file:///relation.csv" AS line
+MATCH (from:symptom{symptom:line.from}),(to:step{step:line.to})
+merge (from)-[r:用法{relation:line.relation}]->(to)
+
+LOAD CSV WITH HEADERS FROM "file:///relation.csv" AS line
+MATCH (from:symptom{symptom:line.from}),(to:symptom{symptom:line.to})
+merge (from)-[r:属于{relation:line.relation}]->(to)

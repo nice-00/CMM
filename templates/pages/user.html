@@ -1,0 +1,42 @@
+{% include 'pages/base.html' %}
+<script type="application/javascript">document.title="KBQA";</script>
+<div class="user-body">
+    <div class="chat">
+        <div class="chat-top"><span>KBQA</span></div>
+        <div class="chat-box">
+            <ul id="message"></ul>
+        </div>
+        <p id="right-img"><img src="../static/images/user.png" alt=""></p>
+        <p id="left-img"><img src="../static/images/agent.png" alt=""></p>
+        <form method="post" onsubmit="return q_a()" action={% url 'user' %}>
+            {% csrf_token %}
+            <div class="chat-bar">
+                <div class="qa-div">
+                    <div class="head-img"><img src="../static/images/user.png" alt=""></div>
+                    <input type="text" id="content" autocomplete="none" name="question" placeholder="输入您想要咨询的问题">
+                    <div class="btn-img"><button type="submit" onclick="clear()"><img src="../static/images/enter.png" alt=""></button></div>
+                </div>
+            </div>
+            <div id="send">{{ li }}</div>
+        </form>
+    </div>
+</div>
+<script type="application/javascript">
+    window.onbeforeunload = function (){
+        var ms = document.getElementById('message');
+        window.sessionStorage.setItem('li',ms.innerHTML)
+        console.log(window.sessionStorage.getItem('li'))
+    }
+    window.onload = function (){
+        var ms = document.getElementById('message'),
+            li = document.getElementById('send'),
+            state = document.getElementById('state'),temp;
+        temp = window.sessionStorage.getItem('li')
+        if (parseInt(window.sessionStorage.getItem('state'))){
+            temp += li.innerHTML
+            window.sessionStorage.setItem('state','0')
+        }
+        ms.innerHTML = temp
+        ms.scrollIntoView(false);
+    }
+</script>
